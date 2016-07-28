@@ -41,59 +41,37 @@
 		}
 
 		function draw() {
-			var x = 0; //시작위지
+			var x = -200; //시작위지
 			var delta = 25;//속도
 
 			setInterval(function() {
 				ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillRect(x-400,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-600, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-800,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-1000, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-1200,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-1400, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-1600,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-1800, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-2000,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-2200, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-2400,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-2600, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-2800,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-3000, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-3200,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-3400, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-3600,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-3800, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-4000,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-4200, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-4400,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-4600, 0, 200, 1000);
-                ctx.fillStyle = "red";
-                ctx.fillRect(x-4800,0,200,1000);
-                ctx.fillStyle = "white";
-                ctx.fillRect(x-5000, 0, 200, 1000);
-                ctx.fillStyle = "red";
+        ctx.fillRect(x-200, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-600, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-1000, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-1400, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-1800, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-2200, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-2600, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-3000, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-3400, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-3800, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-4200, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-4600, 0, 200, 1000);
+        ctx.fillStyle = "red";
+        ctx.fillRect(x-5000, 0, 200, 1000);
+        ctx.fillStyle = "red";
 
 				if (x + 20 > canvas.width || x < 0) {
 					delta = delta;
