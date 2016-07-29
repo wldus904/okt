@@ -25,61 +25,109 @@
 
     <ion-pane>
       <ion-content >
-        <canvas id="canvas" width="1600" height="1000"></canvas>
+        <canvas id="canvas" width="1024px" height="744px" style="position:absolute; top:0; left:0; background-color:white;"></canvas>
+	      <div id="buffer" style="display:none;">
         <script>
 
-		var canvas;
-		var ctx;
-		var x = 10;
-		var delta = 1;
+    var canvas;
+    var ctx;
 
-		window.onload = function() {
-			canvas = document.getElementById("canvas");
-			if (canvas == null || canvas.getContext == null) return;
-			ctx = canvas.getContext("2d");
-			draw();
-		}
+    window.onload = function() {
+      canvas = document.getElementById("canvas");
+      if (canvas == null || canvas.getContext == null) return;
+      ctx = canvas.getContext("2d");
+      draw();
+    }
 
-		function draw() {
-			var x = -200; //시작위지
-			var delta = 25;//속도
+    function draw() {
+      var x = -200; //시작위지
+      var delta = 15;//속도
 
-			setInterval(function() {
-				ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillRect(x-200, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-600, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-1000, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-1400, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-1800, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-2200, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-2600, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-3000, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-3400, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-3800, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-4200, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-4600, 0, 200, 1000);
-        ctx.fillStyle = "red";
-        ctx.fillRect(x-5000, 0, 200, 1000);
-        ctx.fillStyle = "red";
+      var rectWidth = 200;
+      var width = canvas.width,
+          height = canvas.height;
 
-				if (x + 20 > canvas.width || x < 0) {
-					delta = delta;
-				}
-				x += delta;
-			}, 20);
-		}
-	    </script>
+
+      var changeWidth = 10;
+
+
+        var index = 0;
+      setInterval(function() {
+
+       // draw bar
+
+       if(index == 0){
+        for (var i=index; i<16 + index; i++){
+          var x = i*changeWidth;
+          ctx.fillRect(x , 0, changeWidth, height);
+          ctx.fillStyle = "red";
+        }
+       }else{
+         var x = (16 + index)*changeWidth;
+         ctx.fillRect(x , 0, changeWidth, height);
+         ctx.fillStyle = "red"
+
+         ctx.clearRect(index*changeWidth ,0 ,changeWidth ,height );
+       }
+
+
+        //
+
+        index++;
+
+        // ctx.clearRect(0, 0, width, height);
+        // ctx.beginPath();
+        // ctx.moveTo(x-200, 0);
+        // ctx.lineTo(x-200, height);
+        // ctx.moveTo(x-600, 0);
+        // ctx.lineTo(x-600, height);
+        // ctx.moveTo(x-1000, 0);
+        // ctx.lineTo(x-1000, height);
+        // ctx.moveTo(x-1400, 0);
+        // ctx.lineTo(x-1400, height);
+        // ctx.moveTo(x-1800, 0);
+        // ctx.lineTo(x-1800, height);
+        // ctx.moveTo(x-2200, 0);
+        // ctx.lineTo(x-2200, height);
+        // ctx.moveTo(x-2600, 0);
+        // ctx.lineTo(x-2600, height);
+        // ctx.moveTo(x-3000, 0);
+        // ctx.lineTo(x-3000, height);
+        // ctx.stroke();
+        // ctx.fillRect(x-200, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-600, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-1000, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-1400, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-1800, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-2200, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-2600, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-3000, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-3400, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-3800, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-4200, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-4600, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(x-5000, 0, rectWidth, height);
+        // ctx.fillStyle = "red";
+        //x += delta;
+
+        if(index > 500)
+          index = 0;
+      }, 18);
+
+    }
+      </script>
       </ion-content>
     </ion-pane>
   </body>
